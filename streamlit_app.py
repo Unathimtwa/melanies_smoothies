@@ -27,9 +27,8 @@ ingredients_list = st.multiselect(
 
 if ingredients_list:
 	ingredients_string = ''
-    
-
-    for each_fruit in ingredients_list:
+	
+	for each_fruit in ingredients_list:
         ingredients_string += each_fruit
 
 	fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
@@ -43,7 +42,6 @@ if ingredients_list:
     	#st.stop()
     
     	time_to_insert = st.button('Submit Order')
-    
     	if time_to_insert:
         	session.sql(my_insert_stmt).collect()   
 	    
